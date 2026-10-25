@@ -1,0 +1,286 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="claude:viewport-fit-sides" content="cover">
+<title>Art Nails Bunny's</title>
+<meta name="description" content="Nail art y uñas de gel en Vigo. Diseños personalizados, extensiones y reserva online en Booksy.">
+<meta property="og:title" content="Art Nails Bunny's · Uñas de gel y nail art en Vigo">
+<meta property="og:description" content="Diseños personalizados, extensiones y cita online en Vigo.">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Gloock&family=Karla:wght@400;500;700&display=swap">
+<link rel="stylesheet" href="assets/css/base.css">
+<style>
+/* ---- Portada ---- */
+.hero{padding-block:clamp(32px,6vw,72px)}
+.hero__rejilla{display:grid; gap:2rem; align-items:center}
+@media(min-width:900px){.hero__rejilla{grid-template-columns:1.05fr .95fr; gap:3rem}}
+.hero h1{margin-bottom:.2rem}
+.hero__sub{font-size:clamp(1.05rem,2.2vw,1.3rem); color:var(--tinta-suave); max-width:46ch}
+.hero__datos{display:flex; flex-wrap:wrap; gap:.5rem 1.4rem; margin-top:.4rem}
+.hero__dato{display:flex; flex-direction:column}
+.hero__dato b{font-family:var(--display); font-size:1.35rem; line-height:1.1}
+.hero__dato span{font-size:var(--s1); letter-spacing:.1em; text-transform:uppercase; color:var(--tinta-suave)}
+.marco{
+  border-radius:var(--r-almendra); overflow:hidden; border:1px solid var(--borde);
+  box-shadow:var(--sombra); background:var(--superficie-2);
+}
+.marco__pie{display:flex; justify-content:space-between; gap:1rem; padding:.7rem 1rem; font-size:var(--s1); color:var(--tinta-suave)}
+
+/* ---- Servicios ---- */
+.servicio{display:flex; flex-direction:column; gap:.45rem; border:1px solid var(--borde); border-radius:var(--r); padding:1.1rem; background:var(--superficie)}
+.servicio__top{display:flex; justify-content:space-between; align-items:baseline; gap:1rem}
+.servicio__precio{font-family:var(--display); font-size:1.5rem; white-space:nowrap; font-variant-numeric:tabular-nums}
+.servicio__meta{font-size:var(--s1); letter-spacing:.08em; text-transform:uppercase; color:var(--tinta-suave)}
+.servicio p{font-size:var(--s2); color:var(--tinta-suave)}
+
+/* ---- Galería ---- */
+.galeria{display:grid; gap:1rem; grid-template-columns:repeat(auto-fill,minmax(220px,1fr))}
+.pieza{border:1px solid var(--borde); border-radius:var(--r-almendra); overflow:hidden; background:var(--superficie); text-align:left; padding:0; cursor:pointer; font-family:inherit; color:inherit; transition:transform .18s ease}
+.pieza:hover{transform:translateY(-3px)}
+.pieza__txt{padding:.8rem 1rem 1rem}
+.pieza__txt h4{margin-bottom:.15rem}
+.pieza__txt p{font-size:var(--s2); color:var(--tinta-suave)}
+dialog.visor{border:0; border-radius:18px; padding:0; max-width:min(560px,92vw); background:var(--superficie); color:var(--tinta)}
+dialog.visor::backdrop{background:rgba(20,10,16,.6)}
+.visor__txt{padding:1rem 1.2rem 1.3rem; display:flex; flex-direction:column; gap:.6rem}
+
+/* ---- Configurador ---- */
+.config{display:grid; gap:1.2rem; background:var(--superficie); border:1px solid var(--borde); border-radius:var(--r); padding:1.3rem}
+@media(min-width:820px){.config{grid-template-columns:1.1fr .9fr; gap:2rem}}
+.resumen{background:var(--superficie-2); border-radius:12px; padding:1.1rem; display:flex; flex-direction:column; gap:.55rem}
+.resumen__linea{display:flex; justify-content:space-between; gap:1rem; font-size:var(--s2)}
+.resumen__total{display:flex; justify-content:space-between; align-items:baseline; border-top:1px solid var(--borde); padding-top:.6rem}
+.resumen__total b{font-family:var(--display); font-size:1.8rem; font-variant-numeric:tabular-nums}
+
+/* ---- Pasos ---- */
+.paso{display:flex; gap:.9rem; align-items:flex-start}
+.paso__n{flex:0 0 auto; width:34px; height:34px; border-radius:999px; background:var(--rosa); color:var(--tinta); display:grid; place-items:center; font-family:var(--display); font-size:1.05rem}
+.paso p{font-size:var(--s2); color:var(--tinta-suave)}
+
+/* ---- Temporada ---- */
+.temporada{display:grid; gap:1rem}
+@media(min-width:760px){.temporada{grid-template-columns:1fr 1fr}}
+.temporada__card{border:1px solid var(--borde); border-radius:var(--r); overflow:hidden; background:var(--superficie); display:flex; flex-direction:column}
+.temporada__card>div{padding:1rem 1.1rem 1.2rem; display:flex; flex-direction:column; gap:.4rem}
+.temporada__card p{font-size:var(--s2); color:var(--tinta-suave)}
+
+.copiado{position:fixed; left:50%; bottom:22px; transform:translateX(-50%); background:var(--tinta); color:var(--lienzo); padding:.6rem 1.1rem; border-radius:999px; font-size:var(--s2); font-weight:700; z-index:50}
+</style>
+</head>
+<body>
+
+<header class="barra">
+  <div class="wrap barra__int">
+    <a class="barra__marca" href="#inicio">
+      <span id="marcaAvatar"></span>
+      <span>Art&nbsp;Nails<br><em style="font-style:normal; color:var(--frambuesa)">Bunny's</em></span>
+    </a>
+    <nav class="barra__nav">
+      <a href="#servicios">Servicios</a>
+      <a href="#galeria">Diseños</a>
+      <a href="#cita">Tu cita</a>
+      <a href="#faq">Dudas</a>
+      <a href="plan.html">Plan de marketing</a>
+    </nav>
+    <div class="barra__acc">
+      <button class="tema" id="btnTema" type="button" aria-label="Cambiar tema"><svg viewBox="0 0 24 24" width="17" height="17" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="12" cy="12" r="8"/><path d="M12 4a8 8 0 0 0 0 16z" fill="currentColor" stroke="none"/></svg></button>
+      <a class="btn btn--principal btn--pequeno" id="ctaBarra" href="#" target="_blank" rel="noopener">Reservar</a>
+    </div>
+  </div>
+</header>
+
+<main id="inicio">
+
+  <!-- PORTADA -->
+  <section class="hero wrap">
+    <div class="hero__rejilla">
+      <div class="pila">
+        <span class="etiqueta">Nail art studio · Vigo</span>
+        <h1>Uñas que se notan<br>de cerca</h1>
+        <p class="hero__sub" id="heroSub"></p>
+        <div class="fila" style="margin-top:.4rem">
+          <a class="btn btn--principal" id="ctaHero" href="#" target="_blank" rel="noopener">Reservar en Booksy</a>
+          <a class="btn btn--linea" href="#galeria">Ver diseños</a>
+        </div>
+        <hr class="hairline" style="margin-top:1.4rem; max-width:220px">
+        <div class="hero__datos">
+          <div class="hero__dato"><b>24 h</b><span>Agenda online</span></div>
+          <div class="hero__dato"><b>Desde 12 €</b><span>Manicura</span></div>
+          <div class="hero__dato"><b>A medida</b><span>Cada diseño</span></div>
+        </div>
+      </div>
+      <figure class="marco" style="margin:0">
+        <div id="heroArte"></div>
+        <figcaption class="marco__pie"><span>Bunny signature</span><span>Maqueta — sustituir por foto real</span></figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- SERVICIOS -->
+  <section class="seccion seccion--borde" id="servicios">
+    <div class="wrap">
+      <div class="cabecera-seccion">
+        <span class="etiqueta">Servicios</span>
+        <h2>Precios claros, tiempos reales</h2>
+        <p>Cada servicio reserva su propio tiempo en la agenda. Si tu diseño necesita más, se ajusta antes de empezar.</p>
+      </div>
+      <div class="rejilla rejilla--3" id="listaServicios"></div>
+      <p class="nota" style="margin-top:1.2rem" id="avisoPrecios"></p>
+    </div>
+  </section>
+
+  <!-- GALERÍA -->
+  <section class="seccion seccion--borde" id="galeria">
+    <div class="wrap">
+      <div class="cabecera-seccion">
+        <span class="etiqueta">Diseños</span>
+        <h2>El catálogo de la temporada</h2>
+        <p>Filtra por tipo de trabajo. Toca cualquier diseño para ver la descripción y reservarlo.</p>
+      </div>
+      <div class="fila" id="filtros" role="group" aria-label="Filtrar diseños" style="margin-bottom:1.2rem"></div>
+      <div class="galeria" id="galeria"></div>
+      <p class="nota" style="margin-top:1.2rem">Las imágenes son ilustraciones vectoriales de maqueta. Sustitúyelas por fotos propias de trabajos reales antes de publicar el sitio.</p>
+    </div>
+  </section>
+
+  <!-- CONFIGURADOR -->
+  <section class="seccion seccion--borde" id="cita">
+    <div class="wrap">
+      <div class="cabecera-seccion">
+        <span class="etiqueta">Prepara tu cita</span>
+        <h2>Calcula tiempo y precio orientativo</h2>
+        <p>Elige servicio y nivel de diseño para hacerte una idea antes de abrir la agenda.</p>
+      </div>
+      <div class="config">
+        <div class="pila">
+          <div class="campo">
+            <label for="selServicio">Servicio</label>
+            <select id="selServicio"></select>
+          </div>
+          <div class="campo">
+            <label for="selExtra">Nivel de diseño</label>
+            <select id="selExtra"></select>
+          </div>
+          <div class="campo">
+            <label for="selRetirada">¿Llevas producto anterior?</label>
+            <select id="selRetirada">
+              <option value="no">No, uña natural</option>
+              <option value="si">Sí, hay que retirarlo</option>
+            </select>
+          </div>
+          <p style="font-size:var(--s2); color:var(--tinta-suave)">El diseño personalizado se valora en la cita: el nivel añade tiempo estimado, no un importe cerrado.</p>
+        </div>
+        <div class="resumen" aria-live="polite">
+          <span class="etiqueta">Resumen</span>
+          <div class="resumen__linea"><span id="resServicio">—</span><span id="resPrecio">—</span></div>
+          <div class="resumen__linea"><span id="resExtra">—</span><span id="resExtraT">—</span></div>
+          <div class="resumen__linea" id="filaRetirada" hidden><span>Retirada de producto</span><span id="resRetirada">—</span></div>
+          <div class="resumen__total"><span class="etiqueta">Desde</span><b id="resTotal">—</b></div>
+          <div class="resumen__linea"><span>Tiempo estimado</span><b id="resTiempo">—</b></div>
+          <a class="btn btn--principal" id="ctaConfig" href="#" target="_blank" rel="noopener" style="margin-top:.4rem">Reservar este servicio</a>
+          <button class="btn btn--linea" id="btnCopiarCita" type="button">Copiar resumen para el mensaje</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CÓMO FUNCIONA -->
+  <section class="seccion seccion--borde">
+    <div class="wrap">
+      <div class="cabecera-seccion">
+        <span class="etiqueta">Cómo funciona</span>
+        <h2>De la idea a la uña terminada</h2>
+      </div>
+      <div class="rejilla rejilla--4" id="pasos"></div>
+    </div>
+  </section>
+
+  <!-- TEMPORADA -->
+  <section class="seccion seccion--borde">
+    <div class="wrap">
+      <div class="cabecera-seccion">
+        <span class="etiqueta">Campañas</span>
+        <h2>Lo que se lleva ahora</h2>
+      </div>
+      <div class="temporada" id="temporada"></div>
+    </div>
+  </section>
+
+  <!-- OPINIONES -->
+  <section class="seccion seccion--borde">
+    <div class="wrap wrap--texto pila">
+      <span class="etiqueta">Opiniones</span>
+      <h2>Valoraciones reales, en su sitio</h2>
+      <p style="color:var(--tinta-suave)">Las opiniones del estudio se leen directamente en la ficha de reservas y en el perfil de empresa, donde quedan verificadas por quienes han pasado por la cita. Aquí no se publican testimonios inventados ni recortados.</p>
+      <div class="fila">
+        <a class="btn btn--linea" id="ctaOpiniones" href="#" target="_blank" rel="noopener">Ver opiniones en Booksy</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="seccion seccion--borde" id="faq">
+    <div class="wrap wrap--texto">
+      <div class="cabecera-seccion">
+        <span class="etiqueta">Dudas frecuentes</span>
+        <h2>Antes de reservar</h2>
+      </div>
+      <div id="listaFaq"></div>
+    </div>
+  </section>
+
+  <!-- CONTACTO -->
+  <section class="seccion seccion--borde" id="contacto">
+    <div class="wrap">
+      <div class="rejilla rejilla--2">
+        <div class="pila">
+          <span class="etiqueta">Dónde y cuándo</span>
+          <h2>Pide tu hueco</h2>
+          <div id="datosContacto" class="pila" style="gap:.4rem"></div>
+          <div class="fila" style="margin-top:.6rem">
+            <a class="btn btn--principal" id="ctaContacto" href="#" target="_blank" rel="noopener">Abrir agenda</a>
+            <a class="btn btn--linea" id="ctaIG" href="#" target="_blank" rel="noopener">Instagram</a>
+            <a class="btn btn--linea" id="ctaTT" href="#" target="_blank" rel="noopener" hidden>TikTok</a>
+          </div>
+        </div>
+        <div class="tarjeta">
+          <span class="etiqueta">Horario</span>
+          <div class="tabla-cont" style="border:0; margin-top:.6rem">
+            <table style="min-width:0"><tbody id="horario"></tbody></table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="pie">
+  <div class="wrap" style="padding-block:1.6rem; display:flex; flex-wrap:wrap; gap:1rem; justify-content:space-between; align-items:center">
+    <p style="font-size:var(--s2); color:var(--tinta-suave)">Art Nails Bunny's · Vigo</p>
+    <p style="font-size:var(--s1); color:var(--tinta-suave)">
+      <a href="plan.html">Plan de marketing</a> · <a href="mockups.html">Maquetas de redes</a>
+    </p>
+  </div>
+</footer>
+
+<dialog class="visor" id="visor">
+  <div id="visorArte"></div>
+  <div class="visor__txt">
+    <h3 id="visorTitulo"></h3>
+    <p id="visorTexto" style="color:var(--tinta-suave); font-size:var(--s2)"></p>
+    <div class="fila">
+      <a class="btn btn--principal btn--pequeno" id="visorCta" href="#" target="_blank" rel="noopener">Reservar</a>
+      <button class="btn btn--linea btn--pequeno" type="button" id="visorCerrar">Cerrar</button>
+    </div>
+  </div>
+</dialog>
+
+<script src="assets/js/nails.js"></script>
+<script src="assets/js/data.js"></script>
+<script src="assets/js/site.js"></script>
+</body>
+</html>

@@ -1,0 +1,541 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="claude:viewport-fit-sides" content="cover">
+<title>Plan de marketing Bunny's</title>
+<meta name="description" content="Plan de marketing y publicidad de 90 días para Art Nails Bunny's en Vigo.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Gloock&family=Karla:wght@400;500;700&display=swap">
+<link rel="stylesheet" href="assets/css/base.css">
+<style>
+.indice{display:grid; gap:.3rem; grid-template-columns:repeat(auto-fit,minmax(190px,1fr)); font-size:var(--s2)}
+.indice a{text-decoration:none; color:var(--tinta-suave); padding:.35rem 0; border-bottom:1px solid var(--borde)}
+.indice a:hover{color:var(--frambuesa)}
+.cifra{display:flex; flex-direction:column; gap:.1rem}
+.cifra b{font-family:var(--display); font-size:clamp(1.8rem,4vw,2.5rem); line-height:1; font-variant-numeric:tabular-nums}
+.cifra span{font-size:var(--s1); text-transform:uppercase; letter-spacing:.1em; color:var(--tinta-suave)}
+.paleta{display:flex; flex-wrap:wrap; gap:.6rem}
+.muestra{width:92px}
+.muestra i{display:block; height:56px; border-radius:999px 999px 10px 10px; border:1px solid var(--borde)}
+.muestra span{display:block; font-size:var(--s1); margin-top:.3rem; color:var(--tinta-suave)}
+.embudo{display:grid; gap:.7rem}
+@media(min-width:820px){.embudo{grid-template-columns:repeat(4,1fr)}}
+.embudo__p{border:1px solid var(--borde); border-radius:var(--r); padding:1rem; background:var(--superficie); display:flex; flex-direction:column; gap:.4rem}
+.embudo__p h4{display:flex; gap:.5rem; align-items:center}
+.embudo__p ul{font-size:var(--s2); color:var(--tinta-suave); padding-left:1rem; display:grid; gap:.25rem}
+.fase{border:1px solid var(--borde); border-radius:var(--r); background:var(--superficie); overflow:hidden}
+.fase+.fase{margin-top:.8rem}
+.fase__cab{display:flex; flex-wrap:wrap; gap:.5rem 1rem; align-items:baseline; padding:.9rem 1.1rem; background:var(--superficie-2)}
+.fase__cab h3{font-size:1.25rem}
+.fase__cab span{font-size:var(--s1); letter-spacing:.08em; text-transform:uppercase; color:var(--tinta-suave)}
+.tarea{display:flex; gap:.7rem; align-items:flex-start; padding:.7rem 1.1rem; border-top:1px solid var(--borde); font-size:var(--s2)}
+.tarea input{width:18px; height:18px; flex:0 0 auto; margin-top:.15rem; accent-color:var(--frambuesa)}
+.tarea label{text-transform:none; letter-spacing:0; font-weight:400; font-size:var(--s2); color:var(--tinta); cursor:pointer}
+.tarea input:checked+label{color:var(--tinta-suave); text-decoration:line-through}
+.progreso{height:8px; border-radius:999px; background:var(--superficie-2); overflow:hidden; border:1px solid var(--borde)}
+.progreso i{display:block; height:100%; background:var(--frambuesa); width:0; transition:width .3s ease}
+.copys{display:grid; gap:.7rem; grid-template-columns:repeat(auto-fit,minmax(260px,1fr))}
+.copy{border:1px solid var(--borde); border-radius:var(--r); background:var(--superficie); padding:.9rem 1rem; display:flex; flex-direction:column; gap:.5rem}
+.copy pre{margin:0; white-space:pre-wrap; font-family:var(--texto); font-size:var(--s2); color:var(--tinta-suave)}
+.calc{display:grid; gap:1.2rem; background:var(--superficie); border:1px solid var(--borde); border-radius:var(--r); padding:1.2rem}
+@media(min-width:780px){.calc{grid-template-columns:1fr 1fr; gap:2rem}}
+.calc__res{background:var(--superficie-2); border-radius:12px; padding:1rem; display:grid; gap:.6rem; align-content:start}
+.calc__linea{display:flex; justify-content:space-between; align-items:baseline; gap:1rem; font-size:var(--s2)}
+.calc__linea b{font-variant-numeric:tabular-nums; font-size:1.1rem}
+.ideas{columns:2 220px; column-gap:1.6rem; font-size:var(--s2); color:var(--tinta-suave)}
+.ideas li{break-inside:avoid; margin-bottom:.35rem}
+.guion{border-left:3px solid var(--menta); padding-left:1rem; display:grid; gap:.3rem; font-size:var(--s2)}
+.fuente{font-size:var(--s2); border-bottom:1px solid var(--borde); padding:.55rem 0; display:flex; flex-wrap:wrap; gap:.3rem 1rem; justify-content:space-between}
+</style>
+</head>
+<body>
+
+<header class="barra">
+  <div class="wrap barra__int">
+    <a class="barra__marca" href="index.html"><span>Art Nails Bunny's</span></a>
+    <nav class="barra__nav">
+      <a href="#objetivos">Objetivos</a>
+      <a href="#contenido">Contenido</a>
+      <a href="#calendario">90 días</a>
+      <a href="#publicidad">Publicidad</a>
+      <a href="#medicion">Medición</a>
+      <a href="mockups.html">Maquetas</a>
+    </nav>
+    <div class="barra__acc">
+      <button class="tema" id="btnTema" type="button" aria-label="Cambiar tema"><svg viewBox="0 0 24 24" width="17" height="17" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="12" cy="12" r="8"/><path d="M12 4a8 8 0 0 0 0 16z" fill="currentColor" stroke="none"/></svg></button>
+      <a class="btn btn--linea btn--pequeno" href="index.html">Ver web</a>
+    </div>
+  </div>
+</header>
+
+<main>
+
+<section class="wrap seccion">
+  <div class="pila" style="max-width:62ch">
+    <span class="etiqueta">Plan de marketing y publicidad · 26 oct 2026 – 23 ene 2027</span>
+    <h1>Más citas, no más visualizaciones</h1>
+    <p style="font-size:1.15rem; color:var(--tinta-suave)">Un plan de 90 días para que Art Nails Bunny's se encuentre fácil en Vigo, se entienda en tres segundos y se reserve en un minuto. La métrica que manda es la cita completada; el alcance solo sirve si la alimenta.</p>
+  </div>
+  <hr class="hairline" style="margin:2rem 0; max-width:260px">
+  <div class="rejilla rejilla--4">
+    <div class="cifra"><b>6</b><span>Citas objetivo por día con agenda completa</span></div>
+    <div class="cifra"><b>3</b><span>Publicaciones de vídeo por semana</span></div>
+    <div class="cifra"><b>5-8 €</b><span>Presupuesto diario de prueba en anuncios</span></div>
+    <div class="cifra"><b>≤ 6 €</b><span>Coste máximo por cita captada que se tolera al inicio</span></div>
+  </div>
+  <p class="nota" style="margin-top:1.5rem">Las cifras de objetivo son metas de trabajo, no previsiones. El coste por cita se fija comparándolo con el ticket medio: con un ticket de 18-30 €, pagar más de 6-8 € por una primera cita solo tiene sentido si esa clienta repite.</p>
+</section>
+
+<section class="wrap seccion seccion--borde">
+  <div class="indice">
+    <a href="#objetivos">1 · Diagnóstico y objetivos</a>
+    <a href="#publico">2 · Público y propuesta</a>
+    <a href="#identidad">3 · Identidad y voz</a>
+    <a href="#embudo">4 · Embudo de captación</a>
+    <a href="#contenido">5 · Contenido</a>
+    <a href="#textos">6 · Textos listos</a>
+    <a href="#calendario">7 · Calendario de 90 días</a>
+    <a href="#publicidad">8 · Publicidad pagada</a>
+    <a href="#local">9 · Visibilidad local</a>
+    <a href="#fidelizacion">10 · Recurrencia</a>
+    <a href="#medicion">11 · Medición</a>
+    <a href="#cumplimiento">12 · Normas editoriales</a>
+  </div>
+</section>
+
+<!-- 1 -->
+<section class="wrap seccion seccion--borde" id="objetivos">
+  <div class="cabecera-seccion">
+    <span class="etiqueta">1 · Diagnóstico y objetivos</span>
+    <h2>Dónde estamos y qué se busca</h2>
+  </div>
+  <div class="rejilla rejilla--2" style="gap:1.6rem">
+    <div class="pila">
+      <h4>Punto de partida</h4>
+      <ul style="font-size:var(--s2); color:var(--tinta-suave); display:grid; gap:.35rem">
+        <li>Perfil de Instagram activo con trabajo propio y reserva en Booksy ya operativa.</li>
+        <li>Catálogo de servicios publicado con precios y duraciones visibles.</li>
+        <li>Vigo concentra bastante oferta de uñas (centros en A Laxe, Teis, Travesía de Vigo y el centro), así que la diferencia no se gana por precio sino por diseño, trato y facilidad para reservar.</li>
+        <li>Falta de presencia en TikTok y de ficha de empresa en Google: dos canales donde la competencia local sí aparece.</li>
+      </ul>
+    </div>
+    <div class="pila">
+      <h4>Objetivos del trimestre</h4>
+      <div class="tabla-cont">
+        <table>
+          <thead><tr><th>Objetivo</th><th>Cómo se mide</th><th class="num">Meta</th></tr></thead>
+          <tbody>
+            <tr><td>Llenar los días con agenda abierta</td><td>Citas completadas por día</td><td class="num">6</td></tr>
+            <tr><td>Que las redes traigan citas</td><td>Reservas atribuidas a IG/TikTok al mes</td><td class="num">15</td></tr>
+            <tr><td>Fidelizar</td><td>% de citas de clientas repetidas</td><td class="num">40 %</td></tr>
+            <tr><td>Reputación</td><td>Reseñas nuevas verificadas al mes</td><td class="num">4</td></tr>
+            <tr><td>Publicidad eficiente</td><td>Coste por cita atribuida</td><td class="num">≤ 6 €</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="nota">Si al final del trimestre se cumplen dos de estas cinco, el plan ha funcionado. Revisa las metas en la semana 6 con datos reales, no al final.</p>
+    </div>
+  </div>
+</section>
+
+<!-- 2 -->
+<section class="wrap seccion seccion--borde" id="publico">
+  <div class="cabecera-seccion">
+    <span class="etiqueta">2 · Público y propuesta</span>
+    <h2>A quién le hablamos</h2>
+    <p>Tres perfiles que explican casi todas las reservas. No se segmenta por edad: se segmenta por cercanía y por lo que cada una quiere resolver.</p>
+  </div>
+  <div class="rejilla rejilla--3">
+    <article class="tarjeta pila" style="gap:.5rem">
+      <span class="pastilla pastilla--rosa">Mantenimiento</span>
+      <h4>Quiere que le dure</h4>
+      <p style="font-size:var(--s2); color:var(--tinta-suave)">Va cada tres o cuatro semanas, valora la puntualidad y odia tener que escribir para pedir hora. <b>Gancho:</b> reserva en dos toques y hueco fijo reservado al salir.</p>
+    </article>
+    <article class="tarjeta pila" style="gap:.5rem">
+      <span class="pastilla pastilla--menta">Nail art</span>
+      <h4>Viene por el diseño</h4>
+      <p style="font-size:var(--s2); color:var(--tinta-suave)">Guarda referencias, sigue tendencias y comparte el resultado. <b>Gancho:</b> vídeos de proceso, diseños de temporada y disposición a hacer una idea traída de fuera.</p>
+    </article>
+    <article class="tarjeta pila" style="gap:.5rem">
+      <span class="pastilla">Horario difícil</span>
+      <h4>Necesita un hueco raro</h4>
+      <p style="font-size:var(--s2); color:var(--tinta-suave)">Trabaja a turnos o tiene poco margen. <b>Gancho:</b> historias con horas concretas y agenda abierta 24 h para reservar de madrugada si hace falta.</p>
+    </article>
+  </div>
+  <div class="tarjeta tarjeta--realce" style="margin-top:1.4rem">
+    <span class="etiqueta">Propuesta de valor</span>
+    <p style="font-family:var(--display); font-size:clamp(1.3rem,3vw,1.9rem); line-height:1.2; margin-top:.4rem">Nail art hecho a mano en Vigo, con la cita a un clic y un diseño pensado para tus manos, no para una plantilla.</p>
+    <p style="font-size:var(--s2); color:var(--tinta-suave); margin-top:.6rem">Úsala como base para la bio, el anuncio y la primera frase del guion de vídeo. Primero el resultado, enseguida el enlace.</p>
+  </div>
+</section>
+
+<!-- 3 -->
+<section class="wrap seccion seccion--borde" id="identidad">
+  <div class="cabecera-seccion">
+    <span class="etiqueta">3 · Identidad y voz</span>
+    <h2>Cómo se ve y cómo suena</h2>
+    <p>Una base cálida y neutra que deje el protagonismo al color de cada manicura, con un acento frambuesa reservado para una sola cosa: reservar.</p>
+  </div>
+  <div class="paleta" id="paleta"></div>
+  <div class="rejilla rejilla--2" style="margin-top:1.6rem; gap:1.6rem">
+    <div class="pila">
+      <h4>Reglas de imagen</h4>
+      <ul style="font-size:var(--s2); color:var(--tinta-suave); display:grid; gap:.3rem">
+        <li>Fondo liso y luz natural o un solo foco; nada de filtros que cambien el tono del esmalte.</li>
+        <li>Mano completa y plano de detalle de dos uñas en cada set.</li>
+        <li>El frambuesa solo para botones y llamadas a reservar; si está en todas partes, deja de avisar.</li>
+        <li>La conejita del logo aparece en avatar, portadas y una uña firma, no en cada publicación.</li>
+      </ul>
+    </div>
+    <div class="pila">
+      <h4>Tono de voz</h4>
+      <ul style="font-size:var(--s2); color:var(--tinta-suave); display:grid; gap:.3rem">
+        <li>Cercano y concreto: “miércoles a las 16:30”, mejor que “¡escríbeme!”.</li>
+        <li>Sin promesas de duración que no se puedan cumplir.</li>
+        <li>Una idea por publicación y una sola llamada a la acción.</li>
+        <li>Responder siempre en el mismo día laborable, aunque sea para dar una hora alternativa.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- 4 -->
+<section class="wrap seccion seccion--borde" id="embudo">
+  <div class="cabecera-seccion">
+    <span class="etiqueta">4 · Embudo</span>
+    <h2>De verte a repetir</h2>
+    <p>Cada etapa tiene un contenido que la empuja y una señal que dice si funciona.</p>
+  </div>
+  <div class="embudo">
+    <div class="embudo__p"><h4>Descubrir</h4><ul>
+      <li>Reels y TikTok de resultado</li><li>Ubicación Vigo en cada pieza</li><li>Ficha de Google con fotos</li>
+      <li><b>Señal:</b> alcance de no seguidores</li></ul></div>
+    <div class="embudo__p"><h4>Confiar</h4><ul>
+      <li>Proceso, materiales y espacio</li><li>Opiniones verificadas</li><li>Antes y después reales</li>
+      <li><b>Señal:</b> visitas al perfil y guardados</li></ul></div>
+    <div class="embudo__p"><h4>Reservar</h4><ul>
+      <li>Historias de huecos concretos</li><li>Enlace de Booksy en bio y anuncios</li><li>Respuesta rápida en DM</li>
+      <li><b>Señal:</b> clics al enlace y citas creadas</li></ul></div>
+    <div class="embudo__p"><h4>Repetir</h4><ul>
+      <li>Reserva del mantenimiento al salir</li><li>Recordatorio a las tres semanas</li><li>Recomendación entre clientas</li>
+      <li><b>Señal:</b> % de citas repetidas</li></ul></div>
+  </div>
+</section>
+
+<!-- 5 -->
+<section class="wrap seccion seccion--borde" id="contenido">
+  <div class="cabecera-seccion">
+    <span class="etiqueta">5 · Contenido</span>
+    <h2>Qué publicar y cuándo</h2>
+    <p>Cuatro pilares y un ritmo que se puede sostener con la agenda llena. El mismo vídeo vertical sirve para Reels y TikTok cambiando portada y texto.</p>
+  </div>
+
+  <div class="tabla-cont">
+    <table>
+      <thead><tr><th>Pilar</th><th>Ejemplo</th><th>Llamada a la acción</th><th>Peso</th></tr></thead>
+      <tbody>
+        <tr><td><b>Resultado</b></td><td>Set terminado, detalle del brillo, diseño de temporada</td><td>Reserva este diseño en Booksy</td><td>40 %</td></tr>
+        <tr><td><b>Proceso</b></td><td>Preparación, pincelada, color y acabado en 15 segundos</td><td>¿Qué color elegirías?</td><td>25 %</td></tr>
+        <tr><td><b>Confianza</b></td><td>Espacio, materiales, opinión real con permiso</td><td>Consulta servicios y huecos</td><td>20 %</td></tr>
+        <tr><td><b>Disponibilidad</b></td><td>Huecos libres con hora concreta de esa semana</td><td>Elige tu hora online</td><td>15 %</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h3 style="margin-top:2rem">Semana tipo</h3>
+  <div class="tabla-cont" style="margin-top:.8rem">
+    <table>
+      <thead><tr><th>Día</th><th>Publicación</th><th>Tiempo</th></tr></thead>
+      <tbody>
+        <tr><td>Lunes</td><td>Reel/TikTok con el diseño de la semana + historia con huecos</td><td>40 min</td></tr>
+        <tr><td>Miércoles</td><td>Vídeo de proceso, antes/después o cuidado de uñas</td><td>30 min</td></tr>
+        <tr><td>Viernes</td><td>Diseño de temporada, pregunta de color o recordatorio de reserva</td><td>25 min</td></tr>
+        <tr><td>Días de trabajo</td><td>Historias con trabajos reales, ubicación y disponibilidad</td><td>10 min</td></tr>
+        <tr><td>Día libre</td><td>Revisar reservas atribuidas, consultas pendientes y qué formato funcionó</td><td>20 min</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h3 style="margin-top:2rem">Tres guiones que se pueden repetir</h3>
+  <div class="pila-2" style="margin-top:.9rem">
+    <div class="guion"><b>Resultado primero (15 s)</b>
+      <span>0-2 s: mano terminada girando, sin texto.</span>
+      <span>3-10 s: tres cortes del proceso (preparación, color, detalle).</span>
+      <span>11-15 s: resultado otra vez + rótulo “Uñas de gel y nail art en Vigo · Reserva en Booksy”.</span></div>
+    <div class="guion"><b>Antes y después (12 s)</b>
+      <span>0-2 s: uña con producto antiguo, sin dramatizar.</span>
+      <span>3-9 s: retirada, limado y base, acelerado.</span>
+      <span>10-12 s: resultado con rótulo “Retirada + gel · 23 € · unos 100 min”.</span></div>
+    <div class="guion"><b>Elige tu color (10 s)</b>
+      <span>0-2 s: tres esmaltes de temporada en la mano.</span>
+      <span>3-8 s: la misma uña pintada con cada uno.</span>
+      <span>9-10 s: pregunta en pantalla y enlace de reserva en la bio.</span></div>
+  </div>
+  <p class="nota" style="margin-top:1rem">Subtítulos siempre, texto grande y nada de depender del audio: la mayoría ve sin sonido. Usa sonidos populares solo si no tapan el mensaje.</p>
+
+  <h3 style="margin-top:2rem">24 ideas para no quedarse en blanco</h3>
+  <ol class="ideas" style="margin-top:.8rem">
+    <li>Set de la semana en 15 segundos.</li><li>Tres formas de uña explicadas en una mano.</li>
+    <li>Qué pasa si no retiras el gel en casa.</li><li>El color más pedido del mes.</li>
+    <li>Cómo preparar la cutícula antes de la cita.</li><li>Diseño discreto vs. diseño atrevido del mismo tono.</li>
+    <li>Reacción a una referencia difícil de Pinterest.</li><li>Un día en el estudio, en diez segundos.</li>
+    <li>Precio y tiempo real de un set completo.</li><li>Cromado paso a paso.</li>
+    <li>Efecto terciopelo con imán.</li><li>Francesa mini sobre uña corta.</li>
+    <li>Error típico al cortar las uñas en casa.</li><li>Cómo elegir largo si trabajas con las manos.</li>
+    <li>Antes y después de una retirada complicada.</li><li>Colores que disimulan el crecimiento.</li>
+    <li>Diseño de Halloween en tres niveles.</li><li>Manicura de invitada para bodas de invierno.</li>
+    <li>Cranberry y oro para Navidad.</li><li>Nochevieja con purpurina sin recargar.</li>
+    <li>Qué incluye el combo y cuánto dura.</li><li>Cuidados de la primera semana.</li>
+    <li>Huecos de última hora de esta semana.</li><li>Pregunta abierta: ¿uña corta o larga?</li>
+  </ol>
+</section>
+
+<!-- 6 -->
+<section class="wrap seccion seccion--borde" id="textos">
+  <div class="cabecera-seccion">
+    <span class="etiqueta">6 · Textos listos</span>
+    <h2>Copia, pega y ajusta</h2>
+    <p>Los corchetes se sustituyen por los datos reales de esa semana.</p>
+  </div>
+  <div class="copys" id="copys"></div>
+  <div class="tarjeta" style="margin-top:1.2rem">
+    <h4>Etiquetas recomendadas</h4>
+    <p style="font-size:var(--s2); color:var(--tinta-suave); margin-top:.4rem">Mezcla locales y de nicho, entre cinco y diez por publicación: #uñasvigo · #nailartvigo · #uñasdegelvigo · #manicuravigo · #vigo · #pontevedra · #nailartstudio · #uñasdegel · #cateyenails · #nailsofinstagram</p>
+  </div>
+</section>
+
+<!-- 7 -->
+<section class="wrap seccion seccion--borde" id="calendario">
+  <div class="cabecera-seccion">
+    <span class="etiqueta">7 · Calendario</span>
+    <h2>Los 90 días, tarea a tarea</h2>
+    <p>Marca lo que vayas cerrando: el avance se guarda en este navegador.</p>
+  </div>
+  <div class="tarjeta" style="display:flex; flex-wrap:wrap; gap:1rem; align-items:center; margin-bottom:1.2rem">
+    <div style="flex:1; min-width:200px">
+      <div class="progreso"><i id="barraProg"></i></div>
+    </div>
+    <span id="textoProg" style="font-size:var(--s2); font-weight:700"></span>
+    <button class="btn btn--linea btn--pequeno" id="btnReset" type="button">Reiniciar</button>
+  </div>
+  <div id="fases"></div>
+</section>
+
+<!-- 8 -->
+<section class="wrap seccion seccion--borde" id="publicidad">
+  <div class="cabecera-seccion">
+    <span class="etiqueta">8 · Publicidad pagada</span>
+    <h2>Empezar pequeño y parar a tiempo</h2>
+    <p>La publicidad solo se enciende cuando el perfil ya convierte: bio clara, enlace que funciona y agenda con huecos reales.</p>
+  </div>
+
+  <div class="rejilla rejilla--2" style="gap:1.6rem">
+    <div class="pila">
+      <h4>Estructura de la prueba</h4>
+      <ul style="font-size:var(--s2); color:var(--tinta-suave); display:grid; gap:.35rem">
+        <li><b>Plataforma:</b> Instagram y Facebook desde el administrador de anuncios, no el botón de promocionar.</li>
+        <li><b>Presupuesto:</b> 5-8 € al día durante 10-14 días. Entre 50 y 112 € en total. Es dinero de aprendizaje.</li>
+        <li><b>Ubicación:</b> Vigo y municipios a menos de 20-25 minutos (Nigrán, Redondela, Mos, Porriño).</li>
+        <li><b>Objetivo:</b> tráfico al enlace de reserva o mensajes, según lo que puedas atender.</li>
+        <li><b>Creatividades:</b> dos vídeos verticales con un único cambio entre ellos (el texto del primer segundo).</li>
+        <li><b>Regla de corte:</b> si a los 7 días un anuncio no ha generado ninguna cita, se apaga.</li>
+        <li><b>TikTok Promote:</b> se reserva para un vídeo orgánico que ya esté recibiendo consultas.</li>
+      </ul>
+    </div>
+    <div class="pila">
+      <h4>Cuándo gastar y cuándo no</h4>
+      <ul style="font-size:var(--s2); color:var(--tinta-suave); display:grid; gap:.35rem">
+        <li>Sí: semanas con huecos libres, campañas de temporada, apertura de agenda de Navidad.</li>
+        <li>Sí: franjas concretas flojas (mañanas de martes, por ejemplo), con anuncio que las nombre.</li>
+        <li>No: cuando la agenda ya está llena; ahí el dinero se gasta en recordar el mantenimiento.</li>
+        <li>No: descuentos generales permanentes. Rebajan el precio de referencia y cuesta volver a subirlo.</li>
+      </ul>
+      <p class="nota">Anota manualmente cada cita que llegue por anuncio preguntando “¿cómo nos encontraste?”. Sin ese dato, el coste por cita es una suposición.</p>
+    </div>
+  </div>
+
+  <h3 style="margin-top:2rem">Calculadora de inversión</h3>
+  <div class="calc" style="margin-top:.9rem">
+    <div class="pila">
+      <div class="campo"><label for="inv">Inversión total de la prueba (€)</label><input type="number" id="inv" value="84" min="0" step="1"></div>
+      <div class="campo"><label for="citas">Citas atribuidas al anuncio</label><input type="number" id="citas" value="12" min="0" step="1"></div>
+      <div class="campo"><label for="ticket">Ticket medio por cita (€)</label><input type="number" id="ticket" value="22" min="0" step="1"></div>
+      <div class="campo"><label for="repite">Visitas al año de quien repite</label><input type="number" id="repite" value="6" min="1" step="1"></div>
+      <div class="campo"><label for="pcterep">Porcentaje que repite (%)</label><input type="number" id="pcterep" value="35" min="0" max="100" step="1"></div>
+    </div>
+    <div class="calc__res" aria-live="polite">
+      <span class="etiqueta">Resultado</span>
+      <div class="calc__linea"><span>Coste por cita captada</span><b id="rCpc">—</b></div>
+      <div class="calc__linea"><span>Ingreso directo de esas citas</span><b id="rIng">—</b></div>
+      <div class="calc__linea"><span>Retorno inmediato</span><b id="rRoas">—</b></div>
+      <div class="calc__linea"><span>Valor estimado a 12 meses</span><b id="rLtv">—</b></div>
+      <hr class="hairline">
+      <p id="rVeredicto" style="font-size:var(--s2)"></p>
+    </div>
+  </div>
+
+  <h3 style="margin-top:2rem">Capacidad real de la agenda</h3>
+  <p style="font-size:var(--s2); color:var(--tinta-suave); margin-top:.4rem; max-width:62ch">Seis citas no significan lo mismo con manicuras de 40 minutos que con extensiones de 2 h 30. Antes de prometer huecos, comprueba si caben.</p>
+  <div class="calc" style="margin-top:.9rem">
+    <div class="pila">
+      <div class="campo"><label for="horas">Horas de trabajo al día</label><input type="number" id="horas" value="8" min="1" max="14" step="0.5"></div>
+      <div class="campo"><label for="mezcla">Mezcla de servicios</label>
+        <select id="mezcla">
+          <option value="40">Solo manicura (40 min)</option>
+          <option value="70" selected>Mayoría gel con diseño (70 min)</option>
+          <option value="110">Gel y extensiones alternadas (110 min)</option>
+          <option value="150">Solo extensiones (150 min)</option>
+        </select></div>
+      <div class="campo"><label for="margen">Margen entre citas (min)</label><input type="number" id="margen" value="10" min="0" max="40" step="5"></div>
+    </div>
+    <div class="calc__res" aria-live="polite">
+      <span class="etiqueta">Resultado</span>
+      <div class="calc__linea"><span>Citas que caben al día</span><b id="rCitas">—</b></div>
+      <div class="calc__linea"><span>Facturación estimada del día</span><b id="rFact">—</b></div>
+      <hr class="hairline">
+      <p id="rCapacidad" style="font-size:var(--s2)"></p>
+    </div>
+  </div>
+</section>
+
+<!-- 9 -->
+<section class="wrap seccion seccion--borde" id="local">
+  <div class="cabecera-seccion">
+    <span class="etiqueta">9 · Visibilidad local</span>
+    <h2>Que te encuentren buscando</h2>
+    <p>Mucha gente no busca en Instagram: escribe “uñas cerca de mí” en el móvil. Ahí hay que estar.</p>
+  </div>
+  <div class="rejilla rejilla--2" style="gap:1.6rem">
+    <div class="pila">
+      <h4>Perfil de Empresa en Google</h4>
+      <ul style="font-size:var(--s2); color:var(--tinta-suave); display:grid; gap:.3rem">
+        <li>Categoría principal: salón de uñas. Secundarias: manicura y pedicura.</li>
+        <li>Zona de servicio y horario reales, incluidos los cambios de festivos.</li>
+        <li>Enlace de reserva apuntando a Booksy.</li>
+        <li>Diez fotos mínimo, renovadas cada mes, con trabajos propios.</li>
+        <li>Responder todas las reseñas, también las tibias, sin discutir.</li>
+      </ul>
+    </div>
+    <div class="pila">
+      <h4>Búsquedas que importan en Vigo</h4>
+      <div class="tabla-cont">
+        <table>
+          <thead><tr><th>Intención</th><th>Términos</th></tr></thead>
+          <tbody>
+            <tr><td>Servicio + ciudad</td><td>uñas de gel Vigo · manicura Vigo · extensión de uñas Vigo</td></tr>
+            <tr><td>Especialidad</td><td>nail art Vigo · uñas decoradas Vigo · ojo de gato uñas Vigo</td></tr>
+            <tr><td>Urgencia</td><td>uñas cerca de mí · manicura hoy Vigo · cita uñas sábado Vigo</td></tr>
+            <tr><td>Barrios</td><td>uñas Teis · uñas Casco Vello · uñas Travesía de Vigo</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p style="font-size:var(--s2); color:var(--tinta-suave)">Usa estos términos en el nombre del perfil, la descripción de Google, los títulos de la web y el texto alternativo de las fotos. Sin forzar: una vez bien puesto vale más que diez repeticiones.</p>
+    </div>
+  </div>
+  <div class="tarjeta" style="margin-top:1.4rem">
+    <h4>Colaboraciones de barrio</h4>
+    <p style="font-size:var(--s2); color:var(--tinta-suave); margin-top:.4rem">Peluquerías, maquilladoras, tiendas de ropa y centros de estética cercanos: intercambio de recomendación, no pago. Una tarjeta en su mostrador y una publicación conjunta al mes. Mide con un código verbal (“vengo de parte de X”) anotado al reservar.</p>
+  </div>
+</section>
+
+<!-- 10 -->
+<section class="wrap seccion seccion--borde" id="fidelizacion">
+  <div class="cabecera-seccion">
+    <span class="etiqueta">10 · Recurrencia</span>
+    <h2>La cita más barata es la que repite</h2>
+  </div>
+  <div class="rejilla rejilla--3">
+    <div class="tarjeta pila" style="gap:.4rem"><h4>Al terminar</h4><p style="font-size:var(--s2); color:var(--tinta-suave)">Proponer la siguiente cita antes de que salga por la puerta. Es el momento con más probabilidad de reserva de todo el ciclo.</p></div>
+    <div class="tarjeta pila" style="gap:.4rem"><h4>A los 21 días</h4><p style="font-size:var(--s2); color:var(--tinta-suave)">Mensaje breve de recordatorio de mantenimiento con dos horas concretas. Nada de insistir dos veces.</p></div>
+    <div class="tarjeta pila" style="gap:.4rem"><h4>Recomendación</h4><p style="font-size:var(--s2); color:var(--tinta-suave)">Cuando una clienta nueva completa su cita, ambas reciben una ventaja definida y sencilla. Condiciones escritas y sin letra pequeña.</p></div>
+    <div class="tarjeta pila" style="gap:.4rem"><h4>Huecos flojos</h4><p style="font-size:var(--s2); color:var(--tinta-suave)">Descuento solo en franjas concretas de baja demanda, anunciado como excepción y con fecha de fin.</p></div>
+    <div class="tarjeta pila" style="gap:.4rem"><h4>Reseñas</h4><p style="font-size:var(--s2); color:var(--tinta-suave)">Pedir valoración honesta tras la cita y agradecer todas. Nunca se ofrece nada a cambio de una reseña positiva.</p></div>
+    <div class="tarjeta pila" style="gap:.4rem"><h4>Ficha de clienta</h4><p style="font-size:var(--s2); color:var(--tinta-suave)">Anotar forma, largo, alergias declaradas y diseños anteriores. Recordarlo en la siguiente cita es lo que más fideliza.</p></div>
+  </div>
+</section>
+
+<!-- 11 -->
+<section class="wrap seccion seccion--borde" id="medicion">
+  <div class="cabecera-seccion">
+    <span class="etiqueta">11 · Medición</span>
+    <h2>Seis números cada domingo</h2>
+    <p>Quince minutos a la semana. Si un número no cambia una decisión, no se mide.</p>
+  </div>
+  <div class="tabla-cont">
+    <table>
+      <thead><tr><th>Indicador</th><th>Dónde se saca</th><th>Qué decisión activa</th></tr></thead>
+      <tbody>
+        <tr><td>Citas completadas</td><td>Booksy</td><td>Avance hacia la meta del día</td></tr>
+        <tr><td>Nuevas vs. repetidas</td><td>Booksy</td><td>Si falta captación o falta fidelización</td></tr>
+        <tr><td>Ocupación por franja</td><td>Agenda</td><td>Dónde publicar disponibilidad</td></tr>
+        <tr><td>Cancelaciones</td><td>Booksy</td><td>Revisar recordatorios y condiciones</td></tr>
+        <tr><td>Reservas por canal</td><td>Pregunta al reservar</td><td>Dónde invertir tiempo y dinero</td></tr>
+        <tr><td>Coste por cita de anuncio</td><td>Gasto ÷ citas atribuidas</td><td>Mantener, cambiar o apagar la campaña</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="tarjeta tarjeta--realce" style="margin-top:1.4rem">
+    <span class="etiqueta">Regla de decisión</span>
+    <ul style="margin-top:.5rem; font-size:var(--s2); display:grid; gap:.3rem">
+      <li>Si un formato genera reservas: repetirlo con diseños nuevos.</li>
+      <li>Si genera vistas pero ninguna consulta: cambiar el mensaje o la llamada a reservar, no el diseño.</li>
+      <li>Si una franja se llena: mover contenido e inversión a los huecos que quedan.</li>
+      <li>Si el coste por cita supera el ticket medio dos semanas seguidas: apagar y volver a lo orgánico.</li>
+    </ul>
+  </div>
+</section>
+
+<!-- 12 -->
+<section class="wrap seccion seccion--borde" id="cumplimiento">
+  <div class="cabecera-seccion">
+    <span class="etiqueta">12 · Normas editoriales</span>
+    <h2>Lo que no se publica</h2>
+  </div>
+  <div class="rejilla rejilla--2" style="gap:1.2rem">
+    <ul style="font-size:var(--s2); color:var(--tinta-suave); display:grid; gap:.4rem">
+      <li>Fotos de clientas sin permiso explícito, aunque no se vea la cara.</li>
+      <li>Testimonios inventados o reseñas incentivadas.</li>
+      <li>Promesas de duración o de resultado que dependan de cada persona.</li>
+      <li>Precios u ofertas que no estén activos en Booksy ese mismo día.</li>
+    </ul>
+    <ul style="font-size:var(--s2); color:var(--tinta-suave); display:grid; gap:.4rem">
+      <li>Imágenes de otras profesionales sin crédito y sin autorización.</li>
+      <li>Afirmaciones sanitarias sobre tratamientos o productos.</li>
+      <li>Datos personales de clientas en historias o respuestas públicas.</li>
+      <li>Música con derechos fuera de las bibliotecas de cada plataforma.</li>
+    </ul>
+  </div>
+  <p class="nota" style="margin-top:1.2rem">Guarda el consentimiento por escrito (un mensaje vale) de cada clienta cuyas manos aparezcan en vídeo, y respeta la normativa de protección de datos al tratar teléfonos y correos en la agenda.</p>
+</section>
+
+<section class="wrap seccion seccion--borde">
+  <div class="cabecera-seccion">
+    <span class="etiqueta">Fuentes y comprobaciones</span>
+    <h2>De dónde sale cada dato</h2>
+  </div>
+  <div class="fuente"><span>Servicios, precios y duraciones</span><span>Ficha pública de Booksy · comprobar antes de cada campaña</span></div>
+  <div class="fuente"><span>Identidad y comunicación actual</span><span>Perfil público de Instagram @artnails_bunny.s</span></div>
+  <div class="fuente"><span>Tendencias de color otoño-invierno 2026/27</span><span>Prensa de belleza: marrón chocolate, borgoña, azul marino, taupe, cat eye y francesa mini</span></div>
+  <div class="fuente"><span>Competencia local</span><span>Directorios de empresas de Vigo (centros de uñas en A Laxe, Teis y Travesía de Vigo)</span></div>
+  <div class="fuente"><span>Publicidad</span><span>Documentación oficial de Meta y de Booksy para promociones de última hora</span></div>
+  <p class="nota" style="margin-top:1.2rem">Plan redactado el 26 de octubre de 2026. Precios, tendencias y funciones de las plataformas cambian: vuelve a comprobarlos antes de lanzar cualquier campaña.</p>
+</section>
+
+</main>
+
+<footer class="pie">
+  <div class="wrap" style="padding-block:1.6rem; display:flex; flex-wrap:wrap; gap:1rem; justify-content:space-between">
+    <p style="font-size:var(--s2); color:var(--tinta-suave)">Art Nails Bunny's · plan de 90 días</p>
+    <p style="font-size:var(--s1)"><a href="index.html">Web</a> · <a href="mockups.html">Maquetas</a></p>
+  </div>
+</footer>
+
+<script src="assets/js/nails.js"></script>
+<script src="assets/js/data.js"></script>
+<script src="assets/js/site.js"></script>
+<script src="assets/js/plan.js"></script>
+</body>
+</html>

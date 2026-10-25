@@ -1,0 +1,201 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="claude:viewport-fit-sides" content="cover">
+<title>Maquetas de perfil</title>
+<meta name="description" content="Maquetas realistas del perfil de Instagram y TikTok de Art Nails Bunny's.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Gloock&family=Karla:wght@400;500;700&display=swap">
+<link rel="stylesheet" href="assets/css/base.css">
+<style>
+.escaparate{display:grid; gap:2.2rem; grid-template-columns:repeat(auto-fit,minmax(300px,1fr)); align-items:start}
+.pieza-maqueta{display:flex; flex-direction:column; gap:.8rem; align-items:center}
+.pieza-maqueta__txt{max-width:340px; font-size:var(--s2); color:var(--tinta-suave); text-align:center}
+
+/* --- teléfono --- */
+.tel{
+  width:min(330px,88vw); aspect-ratio:9/19.3; border-radius:40px; padding:9px;
+  background:linear-gradient(160deg,#3A2B35,#140D12 60%); box-shadow:var(--sombra); flex:0 0 auto;
+}
+.pantalla{
+  width:100%; height:100%; border-radius:32px; overflow:hidden; position:relative;
+  display:flex; flex-direction:column; font-family:"Karla",system-ui,sans-serif;
+  font-size:11px; line-height:1.35; color-scheme:light;
+}
+.pantalla *{box-sizing:border-box}
+.isla{position:absolute; top:7px; left:50%; transform:translateX(-50%); width:78px; height:19px; border-radius:999px; background:#120B10; z-index:5}
+.estado{display:flex; justify-content:space-between; align-items:center; padding:7px 15px 2px; font-size:10px; font-weight:700}
+.estado span:last-child{letter-spacing:1px}
+
+/* --- Instagram --- */
+.ig{background:#fff; color:#111}
+.ig__barra{display:flex; align-items:center; justify-content:space-between; padding:8px 13px; border-bottom:.5px solid #efefef}
+.ig__usuario{font-weight:700; font-size:13px; display:flex; align-items:center; gap:4px}
+.ig__cuerpo{flex:1; overflow:hidden; display:flex; flex-direction:column}
+.ig__perfil{display:flex; align-items:center; gap:16px; padding:11px 13px 6px}
+.ig__nums{display:flex; gap:18px; flex:1; text-align:center}
+.ig__nums div{display:flex; flex-direction:column; line-height:1.15}
+.ig__nums b{font-size:13px}
+.ig__nums span{font-size:10px; color:#666}
+.ig__bio{padding:0 13px; white-space:pre-line; font-size:11px}
+.ig__bio b{display:block; font-size:12px}
+.ig__enlace{color:#0b57a4; font-weight:700; font-size:11px}
+.ig__botones{display:flex; gap:5px; padding:9px 13px 4px}
+.ig__btn{flex:1; text-align:center; padding:5px 0; border-radius:8px; background:#efefef; font-weight:700; font-size:11px}
+.ig__btn--pri{background:#C02E5C; color:#fff}
+.ig__dest{display:flex; gap:12px; padding:10px 13px 8px; overflow:hidden}
+.ig__dest div{text-align:center; width:52px; flex:0 0 auto}
+.ig__dest i{display:block; width:48px; height:48px; border-radius:999px; border:1px solid #e3e3e3; background:#F6E9ED; margin-bottom:3px; overflow:hidden}
+.ig__dest span{font-size:9px; color:#333; display:block; overflow:hidden; text-overflow:ellipsis; white-space:nowrap}
+.ig__tabs{display:flex; border-top:.5px solid #efefef}
+.ig__tabs div{flex:1; display:grid; place-items:center; padding:7px 0; border-bottom:1.5px solid transparent}
+.ig__tabs div.on{border-bottom-color:#111}
+.ig__grid{display:grid; grid-template-columns:repeat(3,1fr); gap:1.5px; background:#fff}
+.ig__grid>*{aspect-ratio:1; overflow:hidden; position:relative}
+.ig__grid svg{width:100%; height:100%; object-fit:cover}
+.ig__pie{display:flex; justify-content:space-around; padding:9px 0 12px; border-top:.5px solid #efefef; background:#fff}
+
+/* --- historia / reel --- */
+.lleno{position:absolute; inset:0}
+.lleno svg{width:100%; height:100%}
+.velo{position:absolute; inset:0; background:linear-gradient(180deg,rgba(0,0,0,.45) 0%,rgba(0,0,0,0) 28%,rgba(0,0,0,0) 52%,rgba(0,0,0,.72) 100%)}
+.story__barras{display:flex; gap:3px; padding:9px 11px 0; position:relative; z-index:3}
+.story__barras i{flex:1; height:2px; border-radius:2px; background:rgba(255,255,255,.4)}
+.story__barras i.on{background:#fff}
+.story__cab{display:flex; align-items:center; gap:7px; padding:9px 11px; color:#fff; position:relative; z-index:3; font-size:11px; font-weight:700}
+.sticker{
+  position:absolute; left:50%; top:34%; transform:translateX(-50%) rotate(-3deg); z-index:3;
+  background:#fff; color:#2A1A22; border-radius:14px; padding:12px 16px; width:76%; text-align:center;
+  box-shadow:0 8px 24px rgba(0,0,0,.3);
+}
+.sticker b{font-family:"Gloock",Georgia,serif; font-size:16px; display:block; margin-bottom:5px}
+.sticker ul{list-style:none; padding:0; margin:0; font-size:11px; display:grid; gap:3px}
+.story__cta{position:absolute; left:50%; bottom:18px; transform:translateX(-50%); z-index:3; background:#fff; color:#111; border-radius:999px; padding:7px 18px; font-weight:700; font-size:11px}
+.reel__txt{position:absolute; left:11px; right:62px; bottom:16px; z-index:3; color:#fff; display:flex; flex-direction:column; gap:5px}
+.reel__txt b{font-size:12px}
+.reel__txt p{font-size:11px; line-height:1.4}
+.rail{position:absolute; right:9px; bottom:22px; z-index:3; display:flex; flex-direction:column; gap:15px; align-items:center; color:#fff; font-size:9px; font-weight:700}
+.rail div{display:flex; flex-direction:column; align-items:center; gap:3px}
+.rail svg{width:25px; height:25px}
+.sonido{display:flex; align-items:center; gap:5px; font-size:10px; color:#fff}
+
+/* --- TikTok --- */
+.tt{background:#0b0b0d; color:#fff}
+.tt__barra{display:flex; align-items:center; justify-content:space-between; padding:9px 13px; font-weight:700; font-size:13px}
+.tt__perfil{display:flex; flex-direction:column; align-items:center; gap:5px; padding:4px 13px 0}
+.tt__user{font-weight:700; font-size:13px}
+.tt__nums{display:flex; gap:22px; margin-top:4px}
+.tt__nums div{text-align:center}
+.tt__nums b{display:block; font-size:13px}
+.tt__nums span{font-size:9px; color:#a7a7ad}
+.tt__bio{font-size:10.5px; text-align:center; white-space:pre-line; color:#e6e6ea; padding:0 18px}
+.tt__acc{display:flex; gap:6px; padding:9px 13px 6px; width:100%}
+.tt__btn{flex:1; text-align:center; padding:6px 0; border-radius:6px; font-weight:700; font-size:11px; background:#C02E5C; color:#fff}
+.tt__btn--sec{background:#2a2a30; color:#fff; flex:0 0 42px}
+.tt__tabs{display:flex; margin-top:7px; border-bottom:.5px solid #26262c; width:100%}
+.tt__tabs div{flex:1; text-align:center; padding:7px 0; font-size:11px; color:#8a8a92; border-bottom:1.5px solid transparent}
+.tt__tabs div.on{color:#fff; border-bottom-color:#fff}
+.tt__grid{display:grid; grid-template-columns:repeat(3,1fr); gap:1.5px}
+.tt__grid>*{aspect-ratio:9/15; position:relative; overflow:hidden; background:#16161a}
+.tt__grid svg{width:100%; height:100%}
+.tt__vistas{position:absolute; left:4px; bottom:4px; font-size:9px; font-weight:700; text-shadow:0 1px 3px rgba(0,0,0,.8)}
+.tt__pie{display:flex; justify-content:space-around; padding:8px 0 12px; border-top:.5px solid #26262c; font-size:9px; color:#8a8a92}
+
+.aviso-maqueta{border:1px dashed var(--borde); border-radius:var(--r); padding:1rem 1.2rem; font-size:var(--s2); color:var(--tinta-suave)}
+.cubiertas{display:grid; gap:.8rem; grid-template-columns:repeat(auto-fit,minmax(130px,1fr))}
+.cubierta{aspect-ratio:9/16; border-radius:12px; overflow:hidden; position:relative; border:1px solid var(--borde)}
+.cubierta svg{width:100%; height:100%}
+.cubierta span{position:absolute; inset:auto 0 0 0; padding:10px; color:#fff; font-family:"Gloock",Georgia,serif; font-size:1rem; line-height:1.1; background:linear-gradient(transparent,rgba(0,0,0,.7))}
+</style>
+</head>
+<body>
+
+<header class="barra">
+  <div class="wrap barra__int">
+    <a class="barra__marca" href="index.html"><span>Art Nails Bunny's</span></a>
+    <nav class="barra__nav">
+      <a href="index.html">Web</a>
+      <a href="plan.html">Plan de marketing</a>
+      <a href="#instagram">Instagram</a>
+      <a href="#tiktok">TikTok</a>
+    </nav>
+    <div class="barra__acc"><button class="tema" id="btnTema" type="button" aria-label="Cambiar tema"><svg viewBox="0 0 24 24" width="17" height="17" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="12" cy="12" r="8"/><path d="M12 4a8 8 0 0 0 0 16z" fill="currentColor" stroke="none"/></svg></button></div>
+  </div>
+</header>
+
+<main>
+  <section class="wrap seccion">
+    <div class="cabecera-seccion">
+      <span class="etiqueta">Maquetas</span>
+      <h2>Así quedarían los perfiles</h2>
+      <p>Composiciones a tamaño de móvil para decidir avatar, bio, destacados y orden de la cuadrícula antes de tocar las cuentas reales. Las imágenes son ilustraciones vectoriales y las cifras son de ejemplo.</p>
+    </div>
+    <p class="aviso-maqueta">Esto es una recreación de la interfaz con fines de diseño: ni el avatar ni los iconos son los archivos originales de las plataformas. Sustituye las ilustraciones por tus fotos y vídeos, y el avatar por tu logo real antes de publicar.</p>
+  </section>
+
+  <section class="wrap seccion seccion--borde" id="instagram">
+    <div class="cabecera-seccion">
+      <span class="etiqueta">Instagram</span>
+      <h2>Perfil, historia y reel</h2>
+      <p>El perfil es la vitrina: nombre buscable, bio que explica el servicio en tres líneas y enlace directo a la agenda. La cuadrícula alterna set real, proceso y disponibilidad.</p>
+    </div>
+    <div class="escaparate">
+      <div class="pieza-maqueta">
+        <div class="tel"><div class="pantalla ig" id="igPerfil"></div></div>
+        <p class="pieza-maqueta__txt"><b>Perfil.</b> Nombre con “Uñas en Vigo” para que aparezca en búsquedas locales, cinco destacados fijos y botón de reserva visible sin desplazar.</p>
+      </div>
+      <div class="pieza-maqueta">
+        <div class="tel"><div class="pantalla" id="igStory" style="background:#1a1016; position:relative; display:block"></div></div>
+        <p class="pieza-maqueta__txt"><b>Historia de huecos.</b> La publicación que más citas genera: horas concretas, poca palabra y el enlace de reserva abajo.</p>
+      </div>
+      <div class="pieza-maqueta">
+        <div class="tel"><div class="pantalla" id="igReel" style="background:#120c10; position:relative; display:block"></div></div>
+        <p class="pieza-maqueta__txt"><b>Reel.</b> Resultado en los dos primeros segundos, proceso en el medio y cierre con ciudad + llamada a reservar.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="wrap seccion seccion--borde" id="tiktok">
+    <div class="cabecera-seccion">
+      <span class="etiqueta">TikTok</span>
+      <h2>Perfil y vídeo</h2>
+      <p>El mismo vídeo vertical sirve para Reels y TikTok; cambian la portada, el texto y los primeros segundos.</p>
+    </div>
+    <div class="escaparate">
+      <div class="pieza-maqueta">
+        <div class="tel"><div class="pantalla tt" id="ttPerfil"></div></div>
+        <p class="pieza-maqueta__txt"><b>Perfil.</b> Bio de dos líneas, ubicación explícita y enlace de reserva. Los vídeos fijados son antes/después, diseño terminado y cómo reservar.</p>
+      </div>
+      <div class="pieza-maqueta">
+        <div class="tel"><div class="pantalla" id="ttVideo" style="background:#0b0b0d; position:relative; display:block"></div></div>
+        <p class="pieza-maqueta__txt"><b>Vídeo.</b> Texto grande y subtítulos: se ve sin sonido. La llamada a la acción va en el pie y en el último fotograma.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="wrap seccion seccion--borde">
+    <div class="cabecera-seccion">
+      <span class="etiqueta">Portadas</span>
+      <h2>Plantillas de portada</h2>
+      <p>Cinco portadas reutilizables para que la cuadrícula se lea de un vistazo. Pocas palabras y tipografía grande.</p>
+    </div>
+    <div class="cubiertas" id="cubiertas"></div>
+  </section>
+</main>
+
+<footer class="pie">
+  <div class="wrap" style="padding-block:1.6rem; display:flex; flex-wrap:wrap; gap:1rem; justify-content:space-between">
+    <p style="font-size:var(--s2); color:var(--tinta-suave)">Art Nails Bunny's · maquetas de diseño</p>
+    <p style="font-size:var(--s1)"><a href="index.html">Web</a> · <a href="plan.html">Plan</a></p>
+  </div>
+</footer>
+
+<script src="assets/js/nails.js"></script>
+<script src="assets/js/data.js"></script>
+<script src="assets/js/site.js"></script>
+<script src="assets/js/mockups.js"></script>
+</body>
+</html>
