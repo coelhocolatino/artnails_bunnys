@@ -10,7 +10,6 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Gloock&family=Karla:wght@400;500;700&display=swap">
 <style>
-/* base.css incrustado */
 /* ============================================================
    Art Nails Bunny's — sistema visual compartido
    Layout: vitrina editorial. Columna de lectura estrecha,
@@ -212,6 +211,12 @@ input,select,textarea{
   *{animation-duration:.001ms!important; transition-duration:.001ms!important}
 }
 
+/* --------- fotos reales en lugar de maquetas --------- */
+.arte-foto{display:block; width:100%; height:100%; object-fit:cover; background:var(--superficie-2)}
+.pieza .arte-foto,.temporada__card .arte-foto,.marco .arte-foto{aspect-ratio:300/210; height:auto}
+.marca-maqueta{position:absolute; left:10px; top:10px; z-index:2}
+.pieza{position:relative}
+
 </style>
 <style>
 .escaparate{display:grid; gap:2.2rem; grid-template-columns:repeat(auto-fit,minmax(300px,1fr)); align-items:start}
@@ -397,7 +402,6 @@ input,select,textarea{
 </footer>
 
 <script>
-/* nails.js */
 /* ============================================================
    nails.js — dibuja sets de uñas en SVG (maquetas)
    Sustituye estas maquetas por fotos reales antes de publicar:
@@ -602,7 +606,6 @@ input,select,textarea{
 
 </script>
 <script>
-/* data.js */
 /* ============================================================
    data.js — TODO el contenido editable del sitio vive aquí.
    Cambia textos, precios, enlaces y diseños sin tocar el HTML.
@@ -655,6 +658,10 @@ window.ANB = {
 
   /* ---------- 3. Galería (maquetas; sustituir por fotos reales) ---------- */
   disenos: [
+    { id:"real-oro", nombre:"Almendrada lechosa con pan de oro", cat:"nailart", foto:"unas-gel-pan-de-oro-vigo.jpg", texto:"Base lechosa en forma almendra con pan de oro en la uña de acento. Trabajo real del estudio." },
+    { id:"real-resultado", nombre:"Set terminado en almendra", cat:"gel", foto:"resultado-unas-almendradas-vigo.jpg", texto:"El set completo al acabar la cita: acabado espejo y largo mediano." },
+    { id:"real-detalle", nombre:"Pan de oro, colocación", cat:"nailart", foto:"detalle-pan-de-oro-vigo.jpg", texto:"Colocación de las láminas de oro una a una antes de sellar." },
+    { id:"real-proceso", nombre:"Trabajo a pincel", cat:"gel", foto:"nail-art-proceso-vigo.jpg", texto:"Pincelada fina para el diseño. Cada uña se trabaja a mano." },
     { id:"gelrosa", nombre:"Gel rosa cristal", cat:"gel", motivo:"solid", base:"#F0BFC9", brillo:"#FDE7EC", sombra:"#D99AA9", acento:"#FFFFFF", fondo:"#F6E9ED", semilla:3, texto:"Rosa empolvado con acabado espejo. El clásico que aguanta el crecimiento." },
     { id:"frenchmini", nombre:"Francesa mini", cat:"gel", motivo:"french", base:"#F2DED3", brillo:"#FFF6F1", sombra:"#DCC2B4", acento:"#B9243F", fondo:"#F3E8E2", semilla:9, texto:"Punta fina en rojo profundo sobre base nude. Discreta y de temporada." },
     { id:"cromo", nombre:"Cromado perla", cat:"nailart", motivo:"cromo", base:"#DCD3E2", brillo:"#F7F2F8", sombra:"#B9AFC6", acento:"#FFFFFF", fondo:"#EDE7F0", semilla:21, texto:"Efecto cromo iridiscente, el acabado que más se pide en vídeo." },
@@ -725,10 +732,10 @@ window.ANB = {
     enlace: "artnailsbunnys.booksy.com",
     seguidos: "180", seguidores: "2.4K", megusta: "18.6K"
   },
-  rejillaIG: ["gelrosa","frenchmini","cromo","velvet","bunny","chocolate","estrellas","halloween","navidad"],
+  rejillaIG: ["real-oro","real-resultado","real-detalle","real-proceso","gelrosa","cromo","velvet","bunny","chocolate"],
   videosTT: [
-    { d:"velvet", vistas:"24,1K", titulo:"Velvet borgoña paso a paso" },
-    { d:"cromo", vistas:"11,3K", titulo:"Cromo perla en 15 segundos" },
+    { d:"real-resultado", vistas:"24,1K", titulo:"Pan de oro paso a paso" },
+    { d:"real-detalle", vistas:"11,3K", titulo:"Colocando el pan de oro" },
     { d:"bunny", vistas:"8.904", titulo:"La conejita de la casa" },
     { d:"halloween", vistas:"6.512", titulo:"Halloween discreto" },
     { d:"navidad", vistas:"4.330", titulo:"Cranberry + oro" },
@@ -738,7 +745,6 @@ window.ANB = {
 
 </script>
 <script>
-/* site.js */
 /* site.js — monta la portada a partir de data.js */
 (function () {
   'use strict';
@@ -771,7 +777,13 @@ window.ANB = {
         function () { aviso('Selecciona el texto y cópialo'); });
     } catch (e) { aviso('Selecciona el texto y cópialo'); }
   }
-  window.ANB_UI = { copiar: copiar, aviso: aviso, dis: dis };
+  function arte(d, o) {
+    if (d && d.foto) {
+      return '<img class="arte-foto" src="' + d.foto + '" alt="' + d.nombre + '" loading="lazy">';
+    }
+    return window.ANB_NAILS.set(d, o);
+  }
+  window.ANB_UI = { copiar: copiar, aviso: aviso, dis: dis, arte: arte };
 
   if (!D || !byId('listaServicios')) return;
   var n = D.negocio;
@@ -779,7 +791,10 @@ window.ANB = {
   /* ---- cabecera y enlaces ---- */
   byId('marcaAvatar').innerHTML = N.avatar(34, false);
   byId('heroSub').textContent = n.reclamo + '. ' + n.descripcion;
-  byId('heroArte').innerHTML = N.set(D.disenos.filter(function (d) { return d.id === 'bunny'; })[0]);
+  var portada = D.disenos.filter(function (d) { return d.foto; })[0] ||
+                D.disenos.filter(function (d) { return d.id === 'bunny'; })[0];
+  byId('heroArte').innerHTML = arte(portada);
+  byId('pieArte').textContent = portada.nombre;
   ['ctaBarra', 'ctaHero', 'ctaConfig', 'ctaContacto', 'ctaOpiniones'].forEach(function (i) {
     var e = byId(i); if (e) e.href = n.booksy;
   });
@@ -798,14 +813,19 @@ window.ANB = {
 
   /* ---- galería ---- */
   var filtroActual = 'todo';
-  byId('filtros').innerHTML = D.categorias.map(function (c) {
+  var trabajos = D.disenos.filter(function (d) { return d.foto; });
+  var cats = D.categorias.filter(function (c) {
+    return c.id === 'todo' || trabajos.some(function (d) { return d.cat === c.id; });
+  });
+  byId('filtros').hidden = cats.length < 3;
+  byId('filtros').innerHTML = cats.map(function (c) {
     return '<button class="chip' + (c.id === 'todo' ? ' activo' : '') + '" data-cat="' + c.id + '" aria-pressed="' + (c.id === 'todo') + '">' + c.nombre + '</button>';
   }).join('');
   function pintarGaleria() {
-    byId('galeria').innerHTML = D.disenos.filter(function (d) {
+    byId('galeria').innerHTML = trabajos.filter(function (d) {
       return filtroActual === 'todo' || d.cat === filtroActual;
     }).map(function (d) {
-      return '<button class="pieza" data-id="' + d.id + '">' + N.set(d) +
+      return '<button class="pieza" data-id="' + d.id + '">' + arte(d) +
         '<span class="pieza__txt"><h4>' + d.nombre + '</h4><p>' + d.texto + '</p></span></button>';
     }).join('');
   }
@@ -823,7 +843,7 @@ window.ANB = {
   byId('galeria').addEventListener('click', function (ev) {
     var p = ev.target.closest('.pieza'); if (!p) return;
     var d = D.disenos.filter(function (x) { return x.id === p.dataset.id; })[0];
-    byId('visorArte').innerHTML = N.set(d);
+    byId('visorArte').innerHTML = arte(d);
     byId('visorTitulo').textContent = d.nombre;
     byId('visorTexto').textContent = d.texto;
     byId('visorCta').href = n.booksy;
@@ -875,8 +895,8 @@ window.ANB = {
   ];
   byId('temporada').innerHTML = temp.map(function (t) {
     var d = D.disenos.filter(function (x) { return x.id === t.id; })[0];
-    return '<article class="temporada__card">' + N.set(d) +
-      '<div><span class="etiqueta">' + d.cat + '</span><h3>' + t.t + '</h3><p>' + t.d + '</p>' +
+    return '<article class="temporada__card">' + arte(d) +
+      '<div><span class="etiqueta">Propuesta ilustrada · ' + d.cat + '</span><h3>' + t.t + '</h3><p>' + t.d + '</p>' +
       '<a class="btn btn--linea btn--pequeno" style="align-self:flex-start; margin-top:.4rem" href="' + n.booksy + '" target="_blank" rel="noopener">Reservar</a></div></article>';
   }).join('');
 
@@ -902,7 +922,6 @@ window.ANB = {
 
 </script>
 <script>
-/* mockups.js */
 /* mockups.js — dibuja las maquetas de Instagram y TikTok */
 (function () {
   'use strict';
@@ -910,6 +929,7 @@ window.ANB = {
   if (!D || !document.getElementById('igPerfil')) return;
   var byId = function (i) { return document.getElementById(i); };
   var dis = function (id) { return D.disenos.filter(function (d) { return d.id === id; })[0]; };
+  var A = function (id, o) { return window.ANB_UI.arte(dis(id), o); };
 
   var ICO = {
     corazon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M12 20s-7-4.6-7-9.4A3.9 3.9 0 0 1 12 8a3.9 3.9 0 0 1 7 2.6C19 15.4 12 20 12 20z"/></svg>',
@@ -951,13 +971,13 @@ window.ANB = {
         return '<div><i>' + N.set(D.disenos[i + 2], {ratio:'c', cubrir:true}) + '</i><span>' + d + '</span></div>';
       }).join('') + '</div>' +
       '<div class="ig__tabs"><div class="on">' + ico('cuadricula', 17) + '</div><div>' + ico('play', 17) + '</div><div>' + ico('etiqueta', 17) + '</div></div>' +
-      '<div class="ig__grid">' + D.rejillaIG.map(function (id) { return '<div>' + N.set(dis(id), {ratio:'c', cubrir:true}) + '</div>'; }).join('') + '</div>' +
+      '<div class="ig__grid">' + D.rejillaIG.map(function (id) { return '<div>' + A(id, {ratio:'c', cubrir:true}) + '</div>'; }).join('') + '</div>' +
     '</div>' +
     '<div class="ig__pie" style="color:#111">' + ico('casa') + ico('lupa') + ico('mas') + ico('play') + ico('persona') + '</div>';
 
   /* ---------- Instagram: historia ---------- */
   byId('igStory').innerHTML =
-    '<div class="lleno">' + N.set(dis('velvet'), {ratio:'v', cubrir:true}) + '</div><div class="velo"></div>' +
+    '<div class="lleno">' + A('real-oro', {ratio:'v', cubrir:true}) + '</div><div class="velo"></div>' +
     '<div class="isla"></div>' +
     '<div class="story__barras"><i class="on"></i><i></i><i></i></div>' +
     '<div class="story__cab">' + N.avatar(26, false) + '<span>' + p.usuario + '</span><span style="font-weight:400; opacity:.7">2 h</span></div>' +
@@ -968,11 +988,11 @@ window.ANB = {
 
   /* ---------- Instagram: reel ---------- */
   byId('igReel').innerHTML =
-    '<div class="lleno">' + N.set(dis('cromo'), {ratio:'v', cubrir:true}) + '</div><div class="velo"></div>' +
+    '<div class="lleno">' + A('real-resultado', {ratio:'v', cubrir:true}) + '</div><div class="velo"></div>' +
     '<div class="isla"></div>' +
     '<div class="story__cab" style="justify-content:space-between"><span>Reels</span><span>' + ico('mas', 18) + '</span></div>' +
     '<div class="reel__txt"><b>' + p.usuario + ' · Seguir</b>' +
-      '<p>Cromo perla sobre base lechosa 🤍 Tres pasos y el acabado espejo que más dura.<br>Uñas de gel y nail art en Vigo. Reserva en Booksy.</p>' +
+      '<p>Base lechosa con pan de oro 🤍 Las láminas se colocan a mano, una a una.<br>Uñas de gel y nail art en Vigo. Reserva en Booksy.</p>' +
       '<span class="sonido">' + ico('nota', 13) + 'sonido original · artnails_bunny.s</span></div>' +
     '<div class="rail">' +
       '<div>' + ICO.corazon + '<span>842</span></div>' +
@@ -997,18 +1017,18 @@ window.ANB = {
       '<div class="tt__tabs"><div class="on">Vídeos</div><div>Fijados</div><div>Me gusta</div></div>' +
     '</div>' +
     '<div class="tt__grid">' + D.videosTT.map(function (v) {
-      return '<div>' + N.set(dis(v.d), {ratio:'v', cubrir:true}) + '<span class="tt__vistas">&#9654; ' + v.vistas + '</span></div>';
+      return '<div>' + A(v.d, {ratio:'v', cubrir:true}) + '<span class="tt__vistas">&#9654; ' + v.vistas + '</span></div>';
     }).join('') + '</div>' +
     '<div class="tt__pie">' + ['Inicio', 'Buscar', '+', 'Bandeja', 'Perfil'].map(function (x) { return '<span>' + x + '</span>'; }).join('') + '</div>';
 
   /* ---------- TikTok: vídeo ---------- */
   byId('ttVideo').innerHTML =
-    '<div class="lleno">' + N.set(dis('chocolate'), {ratio:'v', cubrir:true}) + '</div><div class="velo"></div>' +
+    '<div class="lleno">' + A('real-detalle', {ratio:'v', cubrir:true}) + '</div><div class="velo"></div>' +
     '<div class="isla"></div>' +
     '<div class="story__cab" style="justify-content:center; gap:16px"><span style="opacity:.6">Siguiendo</span><span>Para ti</span></div>' +
-    '<div style="position:absolute; top:34%; left:0; right:0; text-align:center; z-index:3; color:#fff; font-family:Gloock,Georgia,serif; font-size:22px; text-shadow:0 2px 10px rgba(0,0,0,.6)">Chocolate mocha<br><span style="font-family:Karla,sans-serif; font-size:11px; letter-spacing:.2em; text-transform:uppercase">paso a paso</span></div>' +
+    '<div style="position:absolute; top:34%; left:0; right:0; text-align:center; z-index:3; color:#fff; font-family:Gloock,Georgia,serif; font-size:22px; text-shadow:0 2px 10px rgba(0,0,0,.6)">Pan de oro<br><span style="font-family:Karla,sans-serif; font-size:11px; letter-spacing:.2em; text-transform:uppercase">paso a paso</span></div>' +
     '<div class="reel__txt"><b>@' + t.usuario + '</b>' +
-      '<p>El marrón espresso de la temporada, en uña corta y cuadrada.<br>#uñasvigo #nailartvigo #uñasdegel #vigo</p>' +
+      '<p>Almendra lechosa con detalle de pan de oro.<br>#uñasvigo #nailartvigo #uñasdegel #vigo</p>' +
       '<span class="sonido">' + ico('nota', 13) + 'sonido original · Art Nails Bunny\'s</span></div>' +
     '<div class="rail">' + N.avatar(36, false) +
       '<div>' + ICO.corazon + '<span>3.108</span></div>' +
@@ -1023,7 +1043,7 @@ window.ANB = {
     { d: 'nieve', t: 'Huecos disponibles' }
   ];
   byId('cubiertas').innerHTML = portadas.map(function (c) {
-    return '<div class="cubierta">' + N.set(dis(c.d), {ratio:'v', cubrir:true}) + '<span>' + c.t + '</span></div>';
+    return '<div class="cubierta">' + A(c.d, {ratio:'v', cubrir:true}) + '<span>' + c.t + '</span></div>';
   }).join('');
 })();
 

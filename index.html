@@ -13,7 +13,6 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Gloock&family=Karla:wght@400;500;700&display=swap">
 <style>
-/* base.css incrustado */
 /* ============================================================
    Art Nails Bunny's — sistema visual compartido
    Layout: vitrina editorial. Columna de lectura estrecha,
@@ -215,6 +214,12 @@ input,select,textarea{
   *{animation-duration:.001ms!important; transition-duration:.001ms!important}
 }
 
+/* --------- fotos reales en lugar de maquetas --------- */
+.arte-foto{display:block; width:100%; height:100%; object-fit:cover; background:var(--superficie-2)}
+.pieza .arte-foto,.temporada__card .arte-foto,.marco .arte-foto{aspect-ratio:300/210; height:auto}
+.marca-maqueta{position:absolute; left:10px; top:10px; z-index:2}
+.pieza{position:relative}
+
 </style>
 <style>
 /* ---- Portada ---- */
@@ -318,7 +323,7 @@ dialog.visor::backdrop{background:rgba(20,10,16,.6)}
       </div>
       <figure class="marco" style="margin:0">
         <div id="heroArte"></div>
-        <figcaption class="marco__pie"><span>Bunny signature</span><span>Maqueta — sustituir por foto real</span></figcaption>
+        <figcaption class="marco__pie"><span id="pieArte">Trabajo del estudio</span><span>Art Nails Bunny's · Vigo</span></figcaption>
       </figure>
     </div>
   </section>
@@ -342,11 +347,11 @@ dialog.visor::backdrop{background:rgba(20,10,16,.6)}
       <div class="cabecera-seccion">
         <span class="etiqueta">Diseños</span>
         <h2>El catálogo de la temporada</h2>
-        <p>Filtra por tipo de trabajo. Toca cualquier diseño para ver la descripción y reservarlo.</p>
+        <p>Trabajos reales del estudio. Toca cualquiera para verlo más grande y reservar ese diseño.</p>
       </div>
       <div class="fila" id="filtros" role="group" aria-label="Filtrar diseños" style="margin-bottom:1.2rem"></div>
       <div class="galeria" id="galeria"></div>
-      <p class="nota" style="margin-top:1.2rem">Las imágenes son ilustraciones vectoriales de maqueta. Sustitúyelas por fotos propias de trabajos reales antes de publicar el sitio.</p>
+      <p class="nota" style="margin-top:1.2rem">Todas las fotos de esta galería son trabajos hechos en el estudio. Hay más en <a href="https://www.instagram.com/artnails_bunny.s" target="_blank" rel="noopener">Instagram</a>, que se actualiza cada semana.</p>
     </div>
   </section>
 
@@ -483,7 +488,6 @@ dialog.visor::backdrop{background:rgba(20,10,16,.6)}
 </dialog>
 
 <script>
-/* nails.js */
 /* ============================================================
    nails.js — dibuja sets de uñas en SVG (maquetas)
    Sustituye estas maquetas por fotos reales antes de publicar:
@@ -688,7 +692,6 @@ dialog.visor::backdrop{background:rgba(20,10,16,.6)}
 
 </script>
 <script>
-/* data.js */
 /* ============================================================
    data.js — TODO el contenido editable del sitio vive aquí.
    Cambia textos, precios, enlaces y diseños sin tocar el HTML.
@@ -741,6 +744,10 @@ window.ANB = {
 
   /* ---------- 3. Galería (maquetas; sustituir por fotos reales) ---------- */
   disenos: [
+    { id:"real-oro", nombre:"Almendrada lechosa con pan de oro", cat:"nailart", foto:"unas-gel-pan-de-oro-vigo.jpg", texto:"Base lechosa en forma almendra con pan de oro en la uña de acento. Trabajo real del estudio." },
+    { id:"real-resultado", nombre:"Set terminado en almendra", cat:"gel", foto:"resultado-unas-almendradas-vigo.jpg", texto:"El set completo al acabar la cita: acabado espejo y largo mediano." },
+    { id:"real-detalle", nombre:"Pan de oro, colocación", cat:"nailart", foto:"detalle-pan-de-oro-vigo.jpg", texto:"Colocación de las láminas de oro una a una antes de sellar." },
+    { id:"real-proceso", nombre:"Trabajo a pincel", cat:"gel", foto:"nail-art-proceso-vigo.jpg", texto:"Pincelada fina para el diseño. Cada uña se trabaja a mano." },
     { id:"gelrosa", nombre:"Gel rosa cristal", cat:"gel", motivo:"solid", base:"#F0BFC9", brillo:"#FDE7EC", sombra:"#D99AA9", acento:"#FFFFFF", fondo:"#F6E9ED", semilla:3, texto:"Rosa empolvado con acabado espejo. El clásico que aguanta el crecimiento." },
     { id:"frenchmini", nombre:"Francesa mini", cat:"gel", motivo:"french", base:"#F2DED3", brillo:"#FFF6F1", sombra:"#DCC2B4", acento:"#B9243F", fondo:"#F3E8E2", semilla:9, texto:"Punta fina en rojo profundo sobre base nude. Discreta y de temporada." },
     { id:"cromo", nombre:"Cromado perla", cat:"nailart", motivo:"cromo", base:"#DCD3E2", brillo:"#F7F2F8", sombra:"#B9AFC6", acento:"#FFFFFF", fondo:"#EDE7F0", semilla:21, texto:"Efecto cromo iridiscente, el acabado que más se pide en vídeo." },
@@ -811,10 +818,10 @@ window.ANB = {
     enlace: "artnailsbunnys.booksy.com",
     seguidos: "180", seguidores: "2.4K", megusta: "18.6K"
   },
-  rejillaIG: ["gelrosa","frenchmini","cromo","velvet","bunny","chocolate","estrellas","halloween","navidad"],
+  rejillaIG: ["real-oro","real-resultado","real-detalle","real-proceso","gelrosa","cromo","velvet","bunny","chocolate"],
   videosTT: [
-    { d:"velvet", vistas:"24,1K", titulo:"Velvet borgoña paso a paso" },
-    { d:"cromo", vistas:"11,3K", titulo:"Cromo perla en 15 segundos" },
+    { d:"real-resultado", vistas:"24,1K", titulo:"Pan de oro paso a paso" },
+    { d:"real-detalle", vistas:"11,3K", titulo:"Colocando el pan de oro" },
     { d:"bunny", vistas:"8.904", titulo:"La conejita de la casa" },
     { d:"halloween", vistas:"6.512", titulo:"Halloween discreto" },
     { d:"navidad", vistas:"4.330", titulo:"Cranberry + oro" },
@@ -824,7 +831,6 @@ window.ANB = {
 
 </script>
 <script>
-/* site.js */
 /* site.js — monta la portada a partir de data.js */
 (function () {
   'use strict';
@@ -857,7 +863,13 @@ window.ANB = {
         function () { aviso('Selecciona el texto y cópialo'); });
     } catch (e) { aviso('Selecciona el texto y cópialo'); }
   }
-  window.ANB_UI = { copiar: copiar, aviso: aviso, dis: dis };
+  function arte(d, o) {
+    if (d && d.foto) {
+      return '<img class="arte-foto" src="' + d.foto + '" alt="' + d.nombre + '" loading="lazy">';
+    }
+    return window.ANB_NAILS.set(d, o);
+  }
+  window.ANB_UI = { copiar: copiar, aviso: aviso, dis: dis, arte: arte };
 
   if (!D || !byId('listaServicios')) return;
   var n = D.negocio;
@@ -865,7 +877,10 @@ window.ANB = {
   /* ---- cabecera y enlaces ---- */
   byId('marcaAvatar').innerHTML = N.avatar(34, false);
   byId('heroSub').textContent = n.reclamo + '. ' + n.descripcion;
-  byId('heroArte').innerHTML = N.set(D.disenos.filter(function (d) { return d.id === 'bunny'; })[0]);
+  var portada = D.disenos.filter(function (d) { return d.foto; })[0] ||
+                D.disenos.filter(function (d) { return d.id === 'bunny'; })[0];
+  byId('heroArte').innerHTML = arte(portada);
+  byId('pieArte').textContent = portada.nombre;
   ['ctaBarra', 'ctaHero', 'ctaConfig', 'ctaContacto', 'ctaOpiniones'].forEach(function (i) {
     var e = byId(i); if (e) e.href = n.booksy;
   });
@@ -884,14 +899,19 @@ window.ANB = {
 
   /* ---- galería ---- */
   var filtroActual = 'todo';
-  byId('filtros').innerHTML = D.categorias.map(function (c) {
+  var trabajos = D.disenos.filter(function (d) { return d.foto; });
+  var cats = D.categorias.filter(function (c) {
+    return c.id === 'todo' || trabajos.some(function (d) { return d.cat === c.id; });
+  });
+  byId('filtros').hidden = cats.length < 3;
+  byId('filtros').innerHTML = cats.map(function (c) {
     return '<button class="chip' + (c.id === 'todo' ? ' activo' : '') + '" data-cat="' + c.id + '" aria-pressed="' + (c.id === 'todo') + '">' + c.nombre + '</button>';
   }).join('');
   function pintarGaleria() {
-    byId('galeria').innerHTML = D.disenos.filter(function (d) {
+    byId('galeria').innerHTML = trabajos.filter(function (d) {
       return filtroActual === 'todo' || d.cat === filtroActual;
     }).map(function (d) {
-      return '<button class="pieza" data-id="' + d.id + '">' + N.set(d) +
+      return '<button class="pieza" data-id="' + d.id + '">' + arte(d) +
         '<span class="pieza__txt"><h4>' + d.nombre + '</h4><p>' + d.texto + '</p></span></button>';
     }).join('');
   }
@@ -909,7 +929,7 @@ window.ANB = {
   byId('galeria').addEventListener('click', function (ev) {
     var p = ev.target.closest('.pieza'); if (!p) return;
     var d = D.disenos.filter(function (x) { return x.id === p.dataset.id; })[0];
-    byId('visorArte').innerHTML = N.set(d);
+    byId('visorArte').innerHTML = arte(d);
     byId('visorTitulo').textContent = d.nombre;
     byId('visorTexto').textContent = d.texto;
     byId('visorCta').href = n.booksy;
@@ -961,8 +981,8 @@ window.ANB = {
   ];
   byId('temporada').innerHTML = temp.map(function (t) {
     var d = D.disenos.filter(function (x) { return x.id === t.id; })[0];
-    return '<article class="temporada__card">' + N.set(d) +
-      '<div><span class="etiqueta">' + d.cat + '</span><h3>' + t.t + '</h3><p>' + t.d + '</p>' +
+    return '<article class="temporada__card">' + arte(d) +
+      '<div><span class="etiqueta">Propuesta ilustrada · ' + d.cat + '</span><h3>' + t.t + '</h3><p>' + t.d + '</p>' +
       '<a class="btn btn--linea btn--pequeno" style="align-self:flex-start; margin-top:.4rem" href="' + n.booksy + '" target="_blank" rel="noopener">Reservar</a></div></article>';
   }).join('');
 
